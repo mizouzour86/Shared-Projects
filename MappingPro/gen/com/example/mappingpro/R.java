@@ -1313,9 +1313,9 @@ containing a value of this type.
         public static final int main=0x7f0d0000;
     }
     public static final class string {
-        public static final int Jemaa=0x7f07002d;
-        public static final int Sayssi=0x7f07002c;
-        public static final int Tlat=0x7f07002b;
+        public static final int Jemaa=0x7f07002e;
+        public static final int Sayssi=0x7f07002d;
+        public static final int Tlat=0x7f07002c;
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
          */
         public static final int abc_action_bar_home_description=0x7f07001c;
@@ -1356,9 +1356,9 @@ containing a value of this type.
         /**  Description of a share target (both in the list of such or the default share button) in a ShareActionProvider (share UI). [CHAR LIMIT=NONE] 
          */
         public static final int abc_shareactionprovider_share_with_application=0x7f070026;
-        public static final int absher=0x7f07002f;
-        public static final int action_settings=0x7f07002a;
-        public static final int app_name=0x7f070028;
+        public static final int absher=0x7f070028;
+        public static final int action_settings=0x7f07002b;
+        public static final int app_name=0x7f070029;
         /**   Title for notification shown when GooglePlayServices needs to be
         enabled for a application to work. [CHAR LIMIT=70] 
          */
@@ -1453,11 +1453,11 @@ containing a value of this type.
         /**  Long form sign-in button text [CHAR LIMIT=30] 
          */
         public static final int common_signin_button_text_long=0x7f070013;
-        public static final int hello_world=0x7f070029;
+        public static final int hello_world=0x7f07002a;
         /**  Location client code resources (prefix with location_client) 
          */
         public static final int location_client_powered_by_google=0x7f07001a;
-        public static final int stroke_width=0x7f07002e;
+        public static final int stroke_width=0x7f07002f;
     }
     public static final class style {
         /** 

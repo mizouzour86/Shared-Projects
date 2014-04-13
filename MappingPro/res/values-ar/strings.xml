@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">خريطة موجهة بزر</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">إعدادات</string>
+    <string name="Tlat">أبو قدرة</string>
+    <string name="Sayssi">السايسي</string>
+    <string name="Jemaa">جمعة السحيم</string>
+    <string name="stroke_width">سُمك الحدود</string>
+    <string name="absher">أحسنت باختيارك العربية.. أبشر</string>  
+
+    <string-array name="languages">
+        <item>اختر لغتك</item>
+        <item>العربية</item>
+        <item>English</item>
+        <item>français</item>
+    </string-array>
+
+</resources>

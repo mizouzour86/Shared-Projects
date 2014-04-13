@@ -1,7 +1,8 @@
 package com.example.mappingpro;
 
+import java.util.ArrayList;
 import java.util.Locale;
-
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Color;
@@ -29,7 +30,7 @@ import com.google.android.gms.maps.model.Polygon;
 import com.google.android.gms.maps.model.PolygonOptions;
 
 public class MainActivity extends ActionBarActivity implements
-		OnSeekBarChangeListener, OnItemSelectedListener {
+		OnSeekBarChangeListener {
 
 	private final LatLng LOCATION_SAYSSI = new LatLng(32.331975, -9.197960);
 	private final LatLng LOCATION_TLAT = new LatLng(32.272647, -9.032987);
@@ -58,13 +59,13 @@ public class MainActivity extends ActionBarActivity implements
 
 				if (position == 1) {
 
-					Toast.makeText(parent.getContext(),/*R.string.absher,*/"",
-							Toast.LENGTH_SHORT).show();
+					Toast.makeText(parent.getContext(), R.string.absher,
+							Toast.LENGTH_LONG).show();
 					setLocale("ar");
 				} else if (position == 3) {
 					Toast.makeText(parent.getContext(),
-							"Vous avez choisit une langue de merde", Toast.LENGTH_SHORT)
-							.show();
+							"Vous avez choisit une langue de merde",
+							Toast.LENGTH_SHORT).show();
 					setLocale("fr");
 				} else if (position == 2) {
 					Toast.makeText(parent.getContext(),
@@ -95,6 +96,7 @@ public class MainActivity extends ActionBarActivity implements
 		mWidthBar.setProgress(10);
 
 		setUpMap();
+		setUpMap1();
 	}
 
 	@Override
@@ -105,10 +107,6 @@ public class MainActivity extends ActionBarActivity implements
 		return true;
 	}
 
-	
-
-	
-
 	public void setLocale(String lang) {
 
 		myLocale = new Locale(lang);
@@ -117,7 +115,8 @@ public class MainActivity extends ActionBarActivity implements
 		Configuration conf = res.getConfiguration();
 		conf.locale = myLocale;
 		res.updateConfiguration(conf, dm);
-
+		Intent refresh = new Intent(this, MainActivity.class);
+		startActivity(refresh);
 	}
 
 	@Override
@@ -126,14 +125,13 @@ public class MainActivity extends ActionBarActivity implements
 
 	}
 
-	private void setUpMap() {
-		// TODO Auto-generated method stub
+	private void setUpMap1() {
+		map.moveCamera(CameraUpdateFactory.newLatLng(LOCATION_SAYSSI));
 		polygone = map.addPolygon(new PolygonOptions()
 				.add(new LatLng(32.326344, -9.199293),
 						new LatLng(32.327498, -9.196834),
 						new LatLng(32.326861, -9.196412),
 						new LatLng(32.330287, -9.191600),
-
 						new LatLng(32.329763, -9.190736),
 						new LatLng(32.329774, -9.190741),
 						new LatLng(32.329105, -9.191343),
@@ -231,11 +229,187 @@ public class MainActivity extends ActionBarActivity implements
 						new LatLng(32.327483, -9.199312),
 						new LatLng(32.326847, -9.199326),
 						new LatLng(32.326344, -9.199293))
+
+				.strokeColor(Color.GREEN).strokeWidth(mWidthBar.getProgress())
+				.fillColor(Color.CYAN));
+		map.moveCamera(CameraUpdateFactory.newLatLng(LOCATION_SAYSSI));
+		mWidthBar.setOnSeekBarChangeListener(this);
+	}
+
+	private void setUpMap() {
+		// TODO Auto-generated method stub
+		map.moveCamera(CameraUpdateFactory.newLatLng(LOCATION_JEMAA));
+		ArrayList<LatLng> hole = new ArrayList<LatLng>();
+
+		hole.add(new LatLng(32.354695, -8.907186));
+		hole.add(new LatLng(32.355014, -8.907052));
+		hole.add(new LatLng(32.354761, -8.906156));
+		hole.add(new LatLng(32.355033, -8.906053));
+		hole.add(new LatLng(32.354891, -8.905583));
+		hole.add(new LatLng(32.354821, -8.905149));
+		hole.add(new LatLng(32.354812, -8.904828));
+		hole.add(new LatLng(32.354838, -8.904374));
+		hole.add(new LatLng(32.354835, -8.904115));
+		hole.add(new LatLng(32.354702, -8.903087));
+		hole.add(new LatLng(32.354637, -8.902628));
+		hole.add(new LatLng(32.354320, -8.901883));
+		hole.add(new LatLng(32.353925, -8.900997));
+		hole.add(new LatLng(32.353324, -8.899916));
+		hole.add(new LatLng(32.352738, -8.900135));
+		hole.add(new LatLng(32.351912, -8.900303));
+		hole.add(new LatLng(32.351370, -8.900339));
+		hole.add(new LatLng(32.351486, -8.900836));
+		hole.add(new LatLng(32.351556, -8.901245));
+		hole.add(new LatLng(32.351852, -8.902130));
+		hole.add(new LatLng(32.352173, -8.903061));
+		hole.add(new LatLng(32.352649, -8.902790));
+		hole.add(new LatLng(32.353045, -8.903666));
+		hole.add(new LatLng(32.353596, -8.903420));
+		hole.add(new LatLng(32.353867, -8.904709));
+		hole.add(new LatLng(32.354113, -8.905815));
+		hole.add(new LatLng(32.354345, -8.906400));
+		hole.add(new LatLng(32.354649, -8.907124));
+
+		polygone = map.addPolygon(new PolygonOptions()
+				.add(new LatLng(32.355025, -8.911862),
+						new LatLng(32.354930, -8.911527),
+						new LatLng(32.354977, -8.911493),
+						new LatLng(32.354970, -8.911437),
+						new LatLng(32.355167, -8.911387),
+						new LatLng(32.355161, -8.911340),
+						new LatLng(32.355112, -8.911175),
+						new LatLng(32.355212, -8.911088),
+						new LatLng(32.355181, -8.910911),
+						new LatLng(32.355157, -8.910777),
+						new LatLng(32.355090, -8.910444),
+						new LatLng(32.355343, -8.910267),
+						new LatLng(32.355213, -8.910010),
+						new LatLng(32.355114, -8.909679),
+						new LatLng(32.355584, -8.909265),
+						new LatLng(32.355472, -8.908832),
+						new LatLng(32.355320, -8.908235),
+						new LatLng(32.355042, -8.907103),
+						new LatLng(32.355157, -8.907040),
+						new LatLng(32.355160, -8.907079),
+						new LatLng(32.355448, -8.908191),
+						new LatLng(32.355596, -8.908732),
+						new LatLng(32.355684, -8.909082),
+						new LatLng(32.355768, -8.909042),
+						new LatLng(32.355507, -8.908011),
+						new LatLng(32.355244, -8.907036),
+						new LatLng(32.355483, -8.906915),
+						new LatLng(32.355743, -8.907704),
+						new LatLng(32.356061, -8.908877),
+						new LatLng(32.356375, -8.908706),
+						new LatLng(32.356481, -8.908944),
+						new LatLng(32.356472, -8.908956),
+						new LatLng(32.356536, -8.909048),
+						new LatLng(32.356608, -8.909145),
+						new LatLng(32.356817, -8.908783),
+						new LatLng(32.356700, -8.908524),
+						new LatLng(32.356486, -8.907966),
+						new LatLng(32.356271, -8.907381),
+						new LatLng(32.355951, -8.906574),
+						new LatLng(32.356373, -8.906179),
+						new LatLng(32.356308, -8.905933),
+						new LatLng(32.356529, -8.905753),
+						new LatLng(32.356451, -8.905519),
+						new LatLng(32.356262, -8.905022),
+						new LatLng(32.356050, -8.904457),
+						new LatLng(32.355700, -8.903282),
+						new LatLng(32.356279, -8.902927),
+						new LatLng(32.355916, -8.902078),
+						new LatLng(32.355490, -8.901187),
+						new LatLng(32.355477, -8.901132),
+						new LatLng(32.355593, -8.900959),
+						new LatLng(32.355411, -8.900587),
+						new LatLng(32.355401, -8.900588),
+						new LatLng(32.355116, -8.900125),
+						new LatLng(32.355000, -8.899982),
+						new LatLng(32.355024, -8.899916),
+						new LatLng(32.355523, -8.899445),
+						new LatLng(32.355555, -8.899467),
+						new LatLng(32.355703, -8.899638),
+						new LatLng(32.356252, -8.899112),
+						new LatLng(32.355667, -8.898587),
+						new LatLng(32.355117, -8.897963),
+						new LatLng(32.354636, -8.898406),
+						new LatLng(32.354405, -8.898090),
+						new LatLng(32.353985, -8.898548),
+						new LatLng(32.353669, -8.898167),
+						new LatLng(32.353376, -8.897651),
+						new LatLng(32.352731, -8.896790),
+						new LatLng(32.351798, -8.897712),
+						new LatLng(32.350817, -8.898675),
+						new LatLng(32.350913, -8.898966),
+						new LatLng(32.350984, -8.899459),
+						new LatLng(32.351285, -8.900266),
+						new LatLng(32.351258, -8.900272),
+						new LatLng(32.350874, -8.900229),
+						new LatLng(32.350500, -8.900165),
+						new LatLng(32.350143, -8.900254),
+						new LatLng(32.349831, -8.900400),
+						new LatLng(32.349602, -8.900535),
+						new LatLng(32.349244, -8.900766),
+						new LatLng(32.348803, -8.901139),
+						new LatLng(32.348343, -8.901526),
+						new LatLng(32.347738, -8.902073),
+						new LatLng(32.347325, -8.902464),
+						new LatLng(32.347323, -8.902589),
+						new LatLng(32.347397, -8.902752),
+						new LatLng(32.347502, -8.902885),
+						new LatLng(32.347559, -8.902890),
+						new LatLng(32.347894, -8.902676),
+						new LatLng(32.349482, -8.901904),
+						new LatLng(32.349773, -8.902938),
+						new LatLng(32.350115, -8.904379),
+						new LatLng(32.350673, -8.904251),
+						new LatLng(32.351186, -8.904153),
+						new LatLng(32.351468, -8.905528),
+						new LatLng(32.351467, -8.905616),
+						new LatLng(32.352175, -8.905764),
+						new LatLng(32.351656, -8.906887),
+						new LatLng(32.351404, -8.907480),
+						new LatLng(32.352594, -8.906738),
+						new LatLng(32.353338, -8.906284),
+						new LatLng(32.353674, -8.906136),
+						new LatLng(32.353993, -8.907113),
+						new LatLng(32.353013, -8.907608),
+						new LatLng(32.351936, -8.908218),
+						new LatLng(32.351126, -8.908801),
+						new LatLng(32.351097, -8.908820),
+						new LatLng(32.350739, -8.909104),
+						new LatLng(32.350818, -8.909272),
+						new LatLng(32.351187, -8.909169),
+						new LatLng(32.351390, -8.909141),
+						new LatLng(32.352328, -8.909076),
+						new LatLng(32.352908, -8.909007),
+						new LatLng(32.353551, -8.908870),
+						new LatLng(32.353893, -8.908729),
+						new LatLng(32.354105, -8.908604),
+						new LatLng(32.354515, -8.908366),
+						new LatLng(32.354784, -8.908934),
+						new LatLng(32.354893, -8.909196),
+						new LatLng(32.354298, -8.909559),
+						new LatLng(32.354832, -8.910567),
+						new LatLng(32.354832, -8.910567),
+						new LatLng(32.354750, -8.910689),
+						new LatLng(32.354750, -8.910689),
+						new LatLng(32.354586, -8.910821),
+						new LatLng(32.354507, -8.910923),
+						new LatLng(32.354507, -8.910923),
+						new LatLng(32.353797, -8.911570),
+						new LatLng(32.353797, -8.911570),
+						new LatLng(32.354423, -8.911753),
+						new LatLng(32.354423, -8.911753),
+						new LatLng(32.354892, -8.911767),
+						new LatLng(32.354914, -8.911822),
+						new LatLng(32.354946, -8.911894),
+						new LatLng(32.354946, -8.911894)).addHole(hole)
 				.strokeColor(Color.RED).strokeWidth(mWidthBar.getProgress())
 				.fillColor(Color.BLUE));
 
-		map.moveCamera(CameraUpdateFactory.newLatLng(LOCATION_SAYSSI));
-
+		map.moveCamera(CameraUpdateFactory.newLatLng(LOCATION_JEMAA));
 		mWidthBar.setOnSeekBarChangeListener(this);
 	}
 
@@ -295,19 +469,6 @@ public class MainActivity extends ActionBarActivity implements
 	public void onStopTrackingTouch(SeekBar seekBar) {
 		// TODO Auto-generated method stub
 
-	}
-
-	@Override
-	public void onItemSelected(AdapterView<?> parent, View view, int position,
-			long id) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void onNothingSelected(AdapterView<?> parent) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }
