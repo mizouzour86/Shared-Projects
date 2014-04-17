@@ -7,10 +7,11 @@
     <string name="Tlat">Tlat</string>
     <string name="Sayssi">Sayssi</string>
     <string name="Jemaa">Jemaa</string>
-    <string name="Stroke_width">Stroke width</string>
+    <string name="stroke_width">Epaisseur des frontières</string>
+    
 
     <string-array name="languages">
-        <item>Select your language</item>
+        <item>Choisissez votre langue</item>
         <item>العربية</item>
         <item>English</item>
         <item>français</item>

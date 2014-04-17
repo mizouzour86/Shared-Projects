@@ -1,4 +1,4 @@
-package com.example.mappingpro;
+package com.example.dzmapapp;
 
 import java.util.ArrayList;
 import java.util.Locale;
